@@ -2,6 +2,8 @@ use std::string::String;
 use utils::policy::pest::{PolicyLanguage, PolicyValue, parse, PolicyType};
 use crate::error::RabeError;
 use std::fmt::{Display, Formatter, Result as FormatResult};
+use permutation::sort;
+
 
 const ZERO: i8 = 0;
 const PLUS: i8 = 1;

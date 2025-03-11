@@ -4,12 +4,12 @@
 /// For integration in distributed applications contact [us](mailto:info@aisec.fraunhofer.de).
 ///!
 ///! * Developped by Bramm, Schanzenbach, Schuette
+extern crate permutation;
+extern crate rabe_bn;
 #[allow(dead_code)]
 
-#[cfg(feature = "borsh")]
-extern crate borsh;
+
 #[cfg(feature = "serde")]
-extern crate serde;
 
 extern crate rabe_bn;
 extern crate rand;

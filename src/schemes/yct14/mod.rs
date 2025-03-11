@@ -51,7 +51,7 @@ use borsh::{BorshSerialize, BorshDeserialize};
 pub struct Yct14Attribute {
     name: String,
     #[cfg_attr(feature = "borsh", borsh(skip))]
-    #[cfg_attr(not(feature = "borsh"), serde(skip_serializing_if = "Option::is_none"))]
+    #[cfg_attr(feature = "serde", serde(skip_serializing_if = "Option::is_none"))]
     node: Option<Yct14Type>,
 }
 

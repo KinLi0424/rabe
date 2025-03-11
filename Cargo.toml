@@ -15,9 +15,10 @@ repository = "https://github.com/Fraunhofer-AISEC/rabe"
 documentation = "https://docs.rs/rabe"
 
 [features]
-default = ["serde"]
-borsh = ["borsh/derive", "rabe-bn/borsh"]
-serde = ["serde/derive", "rabe-bn/serde"]
+default = ["std"]
+std = []
+wasm = ["wasm-bindgen"]
+serde = ["dep:serde"]
 
 [lib]
 name="rabe"
@@ -25,15 +26,18 @@ crate-type=["rlib", "cdylib"]
 path = "src/lib.rs"
 
 [dependencies]
-aes-gcm = "0.10.3"
-borsh = { version = "1.5.0", optional = true, default-features = false }
-pest = "2.7.10"
-pest_derive = "2.7.10"
-permutation = "0.4.1"
-rabe-bn = { version = "0.4.23", optional = true, default-features = false }
-rand = "0.8.5"
-serde = { version = "1.0", optional = true, default-features = false }
-sha3 = "0.10.8"
+wasm-bindgen = { version = "0.2", optional = true }
+getrandom = { version = "0.2", features = ["js"] }
+serde = { version = "1.0", features = ["derive"], optional = true}
+serde_json = "1.0"
+pest = "2.1"
+pest_derive = "2.1"
+rand = "0.8"
+aes-gcm = "0.10"
+sha3 = "0.10"
+rabe-bn = "0.4.23"
+permutation = "0.2.5"
+
 
 [workspace]
 
